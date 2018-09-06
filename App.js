@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity} from 'react-native';
+import {FlatList, Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity} from 'react-native';
 import Header from './Components/Header'
 import HeroModal from './Components/HeroModal';
 import Repo from './Components/Repo';
@@ -62,38 +62,35 @@ export default class App extends Component<Props> {
     // })
   }
 
-  state = {
-    modalVisible: false,
-    heroes: []
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        {/* <Header headerText="Minicurso GoNative"/> */}
+			<Header headerText="MARVEL Characters"/>
+			<Heroes/>
 
-        <View style={styles.header}>
+			{/* <View style={styles.header}>
           <Text style={styles.headerText}>ReactNative</Text>
           <TouchableOpacity onPress={() => this.setState({ modalVisible: true })}>
             <Text style={styles.headerButton}>+</Text>
 
           </TouchableOpacity>
-        </View>
+			</View> */}
 
-        <ScrollView contentContainerStyle={styles.repoList}>
+				{/* <ScrollView contentContainerStyle={styles.repoList}>
             { this.state.heroes === [] ? '' : this.state.heroes.map(hero => 
                 <TouchableOpacity key={hero.id} onPress={() => {this.setState({modalVisible: true})}}>
                     <Heroes key={hero.id} description={hero.description} title={hero.name} image={hero.thumbnail.path + '.' + hero.thumbnail.extension} />
                 </TouchableOpacity>
               ) 
             }
-        </ScrollView>
+				</ScrollView> */}
 
-        <HeroModal modalVisible={this.state.modalVisible}
+
+				{/* <HeroModal modalVisible={this.state.modalVisible}
           heroName={'testee'} 
           onCancel={() => {this.setState({modalVisible: false})}}
           onAdd={() => this.fetchHeroes}
-        />
+				/> */}
       </View>
     );
   }
@@ -102,27 +99,9 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333',
+		backgroundColor: 'rgba(0, 0, 0, 0.8)',
   },
-  repoList: {
-    padding: 20
-  },
-  header: {
-    height: 60,
-    paddingHorizontal: 20,
-    backgroundColor: '#FFF',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
-  headerText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'black'
-  },
-  headerButton: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: 'black'
+	text: {
+		color: "#333333"
   }
 });

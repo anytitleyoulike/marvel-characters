@@ -19,18 +19,18 @@ const styles = StyleSheet.create({
     header: {
         height: 60,
         padding: 20,
-        backgroundColor: '#FFF',
+        backgroundColor: '#ed1d24',
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
     headerText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: 'black'
+        color: 'white'
     },
     headerButton: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: 'black'
+        color: 'white'
     }
 })
